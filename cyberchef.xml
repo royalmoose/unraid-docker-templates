@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>CyberChef</Name>
+  <Repository>mpepping/cyberchef</Repository>
+  <Registry>https://hub.docker.com/r/mpepping/cyberchef</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/gchq/CyberChef</Project>
+  <Overview>GCHQ CyberChef in a container. CyberChef is the Cyber Swiss Army Knife web app for encryption, encoding, compression and data analysis.&#xD;
+&#xD;
+Container maintained by mpepping.</Overview>
+  <Category>Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8999]</WebUI>
+  <TemplateURL/>
+  <Icon>https://github.com/royalmoose/unraid-docker-templates/blob/main/cyberchef.png?raw=true</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1623607091</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>GCHQ CyberChef in a container. CyberChef is the Cyber Swiss Army Knife web app for encryption, encoding, compression and data analysis.&#xD;
+&#xD;
+Container maintained by mpepping.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8999</HostPort>
+        <ContainerPort>8000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment/>
+  <Labels/>
+  <Config Name="WebUI" Target="8000" Default="" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="false" Mask="false">8999</Config>
+</Container>
