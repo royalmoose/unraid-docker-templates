@@ -5,27 +5,39 @@
   <Registry>https://hub.docker.com/r/rocker/shiny-verse</Registry>
   <Network>bridge</Network>
   <MyIP/>
-  <Shell>sh</Shell>
+  <Shell>bash</Shell>
   <Privileged>false</Privileged>
   <Support/>
-  <Project/>
-  <Overview>Rocker Shiny server image with Tidyverse R packages pre-installed. Uses version-stable images. </Overview>
-  <Category>Productivity:</Category>
-  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <Project>https://github.com/rocker-org/shiny</Project>
+  <Overview>Docker Shiny Server. Based on rocker/shiny-verse container.&#xD;
+&#xD;
+Rocker Shiny server image with Tidyverse and devtools R packages pre-installed. Uses version-stable images.&#xD;
+&#xD;
+To install additional packages, open the console and run:&#xD;
+Rscript -e 'install.packages("PACKAGE")'&#xD;
+in the terminal.</Overview>
+  <Category>Productivity: Other:</Category>
+  <WebUI>http://[IP]:[PORT:4580]</WebUI>
   <TemplateURL/>
-  <Icon>https://d33wubrfki0l68.cloudfront.net/8f68bc526580587d60714f9279fbe9d86b25362a/79958/assets/img/shiny.png</Icon>
+  <Icon>https://github.com/royalmoose/unraid-docker-templates/blob/main/shiny-server.png?raw=true</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1623568756</DateInstalled>
+  <DateInstalled>1623574163</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Description>Rocker Shiny server image with Tidyverse R packages pre-installed. Uses version-stable images. </Description>
+  <Description>Docker Shiny Server. Based on rocker/shiny-verse container.&#xD;
+&#xD;
+Rocker Shiny server image with Tidyverse and devtools R packages pre-installed. Uses version-stable images.&#xD;
+&#xD;
+To install additional packages, open the console and run:&#xD;
+Rscript -e 'install.packages("PACKAGE")'&#xD;
+in the terminal.</Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-        <HostPort>80</HostPort>
+        <HostPort>4580</HostPort>
         <ContainerPort>3838</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
@@ -33,19 +45,19 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/shiny-server/shinyapps</HostDir>
+      <HostDir>/mnt/user/appdata/shiny-server/shinyapps/</HostDir>
       <ContainerDir>/srv/shiny-server/</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
       <HostDir>/mnt/user/appdata/shiny-server/logs</HostDir>
-      <ContainerDir>/var/log/shiny-server/</ContainerDir>
+      <ContainerDir>/var/log/shiny-server</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
   <Environment/>
   <Labels/>
-  <Config Name="Shiny app directory" Target="/srv/shiny-server/" Default="/mnt/user/appdata/shiny-server/shinyapps" Mode="rw" Description="Shiny app directory. Place your shiny apps in this directory." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/shiny-server/shinyapps</Config>
-  <Config Name="Shiny logs directory" Target="/var/log/shiny-server/" Default="/mnt/user/appdata/shiny-server/logs" Mode="rw" Description="Directory for Shiny app logs." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/shiny-server/logs</Config>
-  <Config Name="Shiny Port" Target="3838" Default="" Mode="tcp" Description="Container Port: 3838" Type="Port" Display="always" Required="true" Mask="false">80</Config>
+  <Config Name="Shiny App directory" Target="/srv/shiny-server/" Default="" Mode="rw" Description="If left blank, the welcome diagnostic page will be displayed." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/shiny-server/shinyapps/</Config>
+  <Config Name="Shiny logs directory" Target="/var/log/shiny-server" Default="/mnt/user/appdata/shiny-server/logs" Mode="rw" Description="Directory for Shiny app logs." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/shiny-server/logs</Config>
+  <Config Name="WebUI" Target="3838" Default="" Mode="tcp" Description="Container Port: 3838" Type="Port" Display="always" Required="true" Mask="false">4580</Config>
 </Container>
